@@ -5,8 +5,8 @@ gen_header:
 
 gen_a:
 	cargo lipo --release
-	cp ./target/universal/release/libresizer_image.a ../ios
-	cp ./target/universal/release/libresizer_image.a ./lipo
+	cp ./target/universal/release/libresizer_image.a ../ios/
+	cp ./target/universal/release/libresizer_image.a ./lipo/
 
 gen_so:
 	# Android Plugin for Gradle 3.1.0 and higher no longer generate APKs for the following ABIs by default: mips, mips64, and armeabi.
