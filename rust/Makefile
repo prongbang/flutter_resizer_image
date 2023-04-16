@@ -1,7 +1,7 @@
 
 gen_header:
-	cbindgen ./src/lib.rs -c cbindgen.toml | grep -v \#include | uniq > target/rust_greeting.h
-	cp -a ./target/resizer_image.h ../ios/Classes
+	cargo test --features c-headers -- generate_headers
+	cp -a ./header/resizer_image.h ../ios/Classes
 
 gen_a:
 	cargo lipo --release

@@ -1,8 +1,9 @@
 use std::io::{Cursor};
 use image::{ImageFormat};
+use ::safer_ffi::prelude::*;
 use base64::{Engine as _, engine::{general_purpose}};
 
-#[no_mangle]
+// #[no_mangle]
 // pub extern fn resizer_image(
 //     data: *const u8,
 //     data_size: usize,
@@ -25,6 +26,7 @@ use base64::{Engine as _, engine::{general_purpose}};
 //     std::mem::forget(data_size);
 //     result
 // }
+#[ffi_export]
 pub extern fn resize_image(base64_data: *const libc::c_char, width: u32, height: u32) -> *mut u8 {
     let cstr = unsafe { std::ffi::CStr::from_ptr(base64_data) };
     let base64_str = cstr.to_str().unwrap();
@@ -46,6 +48,15 @@ pub extern fn resize_image(base64_data: *const libc::c_char, width: u32, height:
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
+}
+
+/// The following test function is necessary for the header generation.
+#[::safer_ffi::cfg_headers]
+#[test]
+fn generate_headers() -> ::std::io::Result<()> {
+    ::safer_ffi::headers::builder()
+        .to_file("header/resizer_image.h")?
+        .generate()
 }
 
 #[cfg(test)]

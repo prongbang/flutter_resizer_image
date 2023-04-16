@@ -11,4 +11,9 @@ public class FlutterResizerImagePlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     result("iOS " + UIDevice.current.systemVersion)
   }
+
+  public func dummyMethodToEnforceBundling() {
+      // This will never be executed
+      resize_image("", 100, 100);
+  }
 }

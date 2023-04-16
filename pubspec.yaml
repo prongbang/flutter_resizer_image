@@ -11,11 +11,21 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
+  ffi: ^2.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  ffigen: ^7.2.10
+
+ffigen:
+  name: ResizerImageLibrary
+  description: Bindings to `rust/target/resizer_image.h`.
+  output: 'lib/resizer_image_library.dart'
+  headers:
+    entry-points:
+      - 'rust/target/resizer_image.h'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
