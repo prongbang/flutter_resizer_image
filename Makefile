@@ -1,0 +1,2 @@
+ffigen:
+	dart run ffigen
