@@ -1,0 +1,24 @@
+[package]
+name = "resizer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "resizer"
+# this is needed to build for iOS and Android.
+crate-type = ["lib", "staticlib", "cdylib"]
+
+[profile.release]
+strip = true
+opt-level = 3
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+fast_image_resize = "2.7.3"
+base64 = "0.21.3"
+image = "0.24"
+flutter_rust_bridge = "1.82.1"
+#image-base64 = "0.1.0"

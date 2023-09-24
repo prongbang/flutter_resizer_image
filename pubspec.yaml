@@ -1,31 +1,24 @@
 name: flutter_resizer_image
-description: A new Flutter plugin project.
+description: Flutter Resizer Image
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
-  flutter: ">=2.5.0"
+  sdk: '>=3.0.5 <4.0.0'
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_rust_bridge: ^1.82.1
   plugin_platform_interface: ^2.0.2
-  ffi: ^2.0.1
+  ffi: ^2.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
-  ffigen: ^7.2.10
-
-ffigen:
-  name: FlutterResizerImageBinding
-  description: Bindings to `rust/header/resizer_image.h`.
-  output: 'lib/binding/flutter_resizer_image_binding.dart'
-  headers:
-    entry-points:
-      - 'rust/header/resizer_image.h'
+  flutter_lints: ^2.0.3
+  ffigen: ^9.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,6 +42,15 @@ flutter:
         pluginClass: FlutterResizerImagePlugin
       ios:
         pluginClass: FlutterResizerImagePlugin
+      linux:
+        pluginClass: FlutterResizerImagePlugin
+      macos:
+        pluginClass: FlutterResizerImagePlugin
+      windows:
+        pluginClass: FlutterResizerImagePluginCApi
+      web:
+        pluginClass: FlutterResizerImageWeb
+        fileName: flutter_resizer_image_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

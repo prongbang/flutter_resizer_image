@@ -1,8 +1,7 @@
+import 'package:flutter_resizer_image/flutter_resizer_image.d.dart';
+import 'package:flutter_resizer_image/flutter_resizer_image.g.dart';
+import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
 
-import 'flutter_resizer_image_platform_interface.dart';
+final dylib = loadLibForFlutter('libresizer.so');
 
-class FlutterResizerImage {
-  Future<String?> getPlatformVersion() {
-    return FlutterResizerImagePlatform.instance.getPlatformVersion();
-  }
-}
+final FlutterResizerImage resizerImage = FlutterResizerImageImpl(dylib);

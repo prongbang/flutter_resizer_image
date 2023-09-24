@@ -9,11 +9,16 @@ public class FlutterResizerImagePlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    switch call.method {
+    case "getPlatformVersion":
+      result("iOS " + UIDevice.current.systemVersion)
+    default:
+      result(FlutterMethodNotImplemented)
+    }
   }
 
   public func dummyMethodToEnforceBundling() {
       // This will never be executed
-      resize_image("", 100, 100);
+      dummy_method_to_enforce_bundling()
   }
 }

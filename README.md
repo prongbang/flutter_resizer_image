@@ -1,6 +1,6 @@
 # flutter_resizer_image
 
-A new Flutter plugin project.
+Flutter Resizer Image
 
 ## Getting Started
 

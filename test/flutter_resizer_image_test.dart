@@ -20,10 +20,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    FlutterResizerImage flutterResizerImagePlugin = FlutterResizerImage();
-    MockFlutterResizerImagePlatform fakePlatform = MockFlutterResizerImagePlatform();
-    FlutterResizerImagePlatform.instance = fakePlatform;
 
-    expect(await flutterResizerImagePlugin.getPlatformVersion(), '42');
   });
 }
