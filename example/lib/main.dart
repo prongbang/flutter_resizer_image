@@ -46,14 +46,33 @@ class _MyAppState extends State<MyApp> {
                           if (image != null) {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Image.memory(image),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 100,
+                                    height: 100,
+                                    child: Image.memory(image),
+                                  ),
+                                  const Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Title'),
+                                        Text('Subtitle'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             );
                           }
                           return const Text('ERROR!');
                         }
-                        return const AspectRatio(
-                          aspectRatio: 1 / 1,
-                          child: Text('Resizing...'),
+                        return const SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Center(child: Text('Resizing...')),
                         );
                       },
                     );
@@ -68,12 +87,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<Uint8List> _resizeImage() async {
-    print('resizer: ${DateTime.now()}');
+    final start = DateTime.now();
     final image = await _resizerImage.resizerWithPercent(
       image: _image,
       percent: 50,
     );
-    print('resizer: ${DateTime.now()}');
+    final end = DateTime.now();
+    print('resizer: ${end.millisecondsSinceEpoch - start.millisecondsSinceEpoch}ms');
     return image;
   }
 }
