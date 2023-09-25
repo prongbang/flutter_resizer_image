@@ -1,15 +1,40 @@
 # flutter_resizer_image
 
-Flutter Resizer Image
+Flutter Resizer Image using Rust library for [fast image resizing](https://github.com/cykooz/fast_image_resize).
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+- pubspec.yml
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```yaml
+dependencies:
+  flutter_resizer_image: ^0.0.1
+```
+
+- New Instance
+
+```dart
+final resizerImage = FlutterResizerImage.instance();
+```
+
+- Resize with Percent
+
+```dart
+String image = "iVBORw0KGgoA....AAANS=";
+final image = await resizerImage.resizerWithPercent(
+    image: img,
+    percent: 50,
+);
+```
+
+- Resize with Width x Height
+
+```dart
+String image = "iVBORw0KGgoA....AAANS=";
+final image = await resizerImage.resizer(
+    image: img,
+    width: 100,
+    height: 100,
+);
+```
 

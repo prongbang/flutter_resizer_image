@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Flutter Resizer Image using Rust library for fast image resizing

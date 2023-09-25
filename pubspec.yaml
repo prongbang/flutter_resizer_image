@@ -1,7 +1,7 @@
 name: flutter_resizer_image
-description: Flutter Resizer Image
+description: Flutter Resizer Image using Rust library for fast image resizing
 version: 0.0.1
-homepage:
+homepage: https://github.com/prongbang/flutter_resizer_image
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

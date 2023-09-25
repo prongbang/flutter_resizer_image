@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
 
   Uint8List _imageResized = Uint8List(0);
 
-  final _resizerImage = FlutterResizerImage.instance;
+  final _resizerImage = FlutterResizerImage.instance();
 
   @override
   void initState() {
@@ -68,10 +68,8 @@ class _MyAppState extends State<MyApp> {
     });
 
     print('resizer: ${DateTime.now()}');
-    final image = await _resizerImage.resizer(
+    final image = await _resizerImage.resizerWithPercent(
       image: img,
-      width: 0,
-      height: 0,
       percent: 50,
     );
     print('resizer: $image');
