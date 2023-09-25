@@ -7,25 +7,21 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
-import 'package:uuid/uuid.dart';
-
-import 'dart:convert';
-import 'dart:async';
-import 'package:meta/meta.dart';
-import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
-import 'package:uuid/uuid.dart';
 
 import 'dart:ffi' as ffi;
 
 class ResizerImageImpl implements ResizerImage {
   final ResizerImagePlatform _platform;
+
   factory ResizerImageImpl(ExternalLibrary dylib) =>
       ResizerImageImpl.raw(ResizerImagePlatform(dylib));
 
   /// Only valid on web/WASM platforms.
   factory ResizerImageImpl.wasm(FutureOr<WasmModule> module) =>
       ResizerImageImpl(module as ExternalLibrary);
+
   ResizerImageImpl.raw(this._platform);
+
   Future<Uint8List> resizer(
       {required String image,
       required int width,
@@ -56,6 +52,7 @@ class ResizerImageImpl implements ResizerImage {
   void dispose() {
     _platform.dispose();
   }
+
 // Section: wire2api
 
   int _wire2api_u8(dynamic raw) {

@@ -11,8 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_rust_bridge: ^1.82.1
-  plugin_platform_interface: ^2.0.2
-  ffi: ^2.1.0
+  meta: ^1.9.1
 
 dev_dependencies:
   flutter_test:
