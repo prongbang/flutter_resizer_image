@@ -22,7 +22,7 @@ final resizerImage = FlutterResizerImage.instance();
 ```dart
 String image = "iVBORw0KGgoA....AAANS=";
 final image = await resizerImage.resizerWithPercent(
-    image: img,
+    image: image,
     percent: 50,
 );
 ```
@@ -32,7 +32,7 @@ final image = await resizerImage.resizerWithPercent(
 ```dart
 String image = "iVBORw0KGgoA....AAANS=";
 final image = await resizerImage.resizer(
-    image: img,
+    image: image,
     width: 100,
     height: 100,
 );
