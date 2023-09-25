@@ -4,21 +4,16 @@
 
 import 'dart:convert';
 import 'dart:async';
-import 'package:meta/meta.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
-import 'package:uuid/uuid.dart';
 
-abstract class FlutterResizerImage {
-  Future<int> add({required int left, required int right, dynamic hint});
-
-  FlutterRustBridgeTaskConstMeta get kAddConstMeta;
-
-  Future<Uint8List> resizer(
-      {required String image,
-      required int width,
-      required int height,
-      required int percent,
-      dynamic hint});
+abstract class ResizerImage {
+  Future<Uint8List> resizer({
+    required String image,
+    required int width,
+    required int height,
+    required int percent,
+    dynamic hint,
+  });
 
   FlutterRustBridgeTaskConstMeta get kResizerConstMeta;
 }

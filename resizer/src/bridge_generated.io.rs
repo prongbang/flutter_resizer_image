@@ -2,11 +2,6 @@ use super::*;
 // Section: wire functions
 
 #[no_mangle]
-pub extern "C" fn wire_add(port_: i64, left: i8, right: i8) {
-    wire_add_impl(port_, left, right)
-}
-
-#[no_mangle]
 pub extern "C" fn wire_resizer(
     port_: i64,
     image: *mut wire_uint_8_list,
@@ -22,7 +17,7 @@ pub extern "C" fn wire_resizer(
 #[no_mangle]
 pub extern "C" fn new_uint_8_list_0(len: i32) -> *mut wire_uint_8_list {
     let ans = wire_uint_8_list {
-        ptr: support::new_leak_vec_ptr(Default::default(), len),
+        ptr: support::new_leak_vec_ptr(Default::default(), len.clone()),
         len,
     };
     support::new_leak_box_ptr(ans)

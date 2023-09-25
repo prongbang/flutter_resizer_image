@@ -22,24 +22,6 @@ use std::sync::Arc;
 
 // Section: wire functions
 
-fn wire_add_impl(
-    port_: MessagePort,
-    left: impl Wire2Api<i8> + UnwindSafe,
-    right: impl Wire2Api<i8> + UnwindSafe,
-) {
-    FLUTTER_RUST_BRIDGE_HANDLER.wrap::<_, _, _, i8, _>(
-        WrapInfo {
-            debug_name: "add",
-            port: Some(port_),
-            mode: FfiCallMode::Normal,
-        },
-        move || {
-            let api_left = left.wire2api();
-            let api_right = right.wire2api();
-            move |task_callback| Result::<_, ()>::Ok(add(api_left, api_right))
-        },
-    )
-}
 fn wire_resizer_impl(
     port_: MessagePort,
     image: impl Wire2Api<String> + UnwindSafe,
@@ -87,11 +69,6 @@ where
     }
 }
 
-impl Wire2Api<i8> for i8 {
-    fn wire2api(self) -> i8 {
-        self
-    }
-}
 impl Wire2Api<u32> for u32 {
     fn wire2api(self) -> u32 {
         self

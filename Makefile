@@ -17,9 +17,9 @@ step_4:
 
 gen:
 	flutter_rust_bridge_codegen \
-		--class-name FlutterResizerImage \
+		--class-name ResizerImage \
 		--skip-deps-check \
 		--rust-input resizer/src/api.rs \
-		--dart-output lib/flutter_resizer_image.g.dart \
-		--dart-decl-output lib/flutter_resizer_image.d.dart \
+		--dart-output lib/resizer_image.g.dart \
+		--dart-decl-output lib/resizer_image.d.dart \
 		-c ios/Classes/libresizer.h

@@ -7,10 +7,6 @@ use fast_image_resize as fr;
 use image::codecs::png::PngEncoder;
 use image::{ColorType, ImageEncoder, ImageFormat};
 
-pub fn add(left: i8, right: i8) -> i8 {
-    left + right
-}
-
 pub fn resizer(image: String, width: u32, height: u32, percent: u32) -> Vec<u8> {
     let base64_image = image.as_str();
 
@@ -89,7 +85,6 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        assert_eq!(4, 4);
     }
 }
