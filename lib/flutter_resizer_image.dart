@@ -1,6 +1,9 @@
+library flutter_resizer_image;
+
 import 'dart:typed_data';
 
-import 'package:resizer/resizer.dart' as r;
+import 'package:flutter_resizer_image/src/rust/api/resizer.dart' as r;
+import 'package:flutter_resizer_image/src/rust/frb_generated.dart';
 
 abstract class FlutterResizerImage {
   FlutterResizerImage();
@@ -8,7 +11,7 @@ abstract class FlutterResizerImage {
   factory FlutterResizerImage.instance() => FlutterResizerImageImpl();
 
   static Future<void> init() {
-    return r.init();
+    return RustLib.init();
   }
 
   Future<Uint8List> resizer({

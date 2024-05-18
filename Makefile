@@ -23,3 +23,6 @@ gen:
 		--dart-output lib/resizer_image.g.dart \
 		--dart-decl-output lib/resizer_image.d.dart \
 		-c ios/Classes/libresizer.h
+
+generate:
+	flutter_rust_bridge_codegen generate

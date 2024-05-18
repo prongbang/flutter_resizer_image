@@ -1,2 +1,0 @@
-generate:
-	flutter_rust_bridge_codegen generate

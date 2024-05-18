@@ -11,8 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   meta: ^1.9.1
-  resizer:
-    path: commons/resizer
+  rust_lib_resizer:
+    path: rust_builder
+  flutter_rust_bridge: 2.0.0-dev.32
 
 dev_dependencies:
   flutter_test:
