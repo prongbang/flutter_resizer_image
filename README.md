@@ -11,6 +11,14 @@ dependencies:
   flutter_resizer_image: ^1.0.0
 ```
 
+or
+
+```yaml
+dependencies:
+  flutter_resizer_image:
+    git: https://github.com/prongbang/flutter_resizer_image
+```
+
 - Initial
 
 ```dart
