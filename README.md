@@ -8,7 +8,18 @@ Flutter Resizer Image using Rust library for [fast image resizing](https://githu
 
 ```yaml
 dependencies:
-  flutter_resizer_image: ^0.0.1
+  flutter_resizer_image: ^1.0.0
+```
+
+- Initial
+
+```dart
+import 'package:flutter_resizer_image/flutter_resizer_image.dart';
+
+void main() async {
+  await FlutterResizerImage.init();
+  runApp(const MyApp());
+}
 ```
 
 - New Instance
@@ -21,20 +32,13 @@ final resizerImage = FlutterResizerImage.instance();
 
 ```dart
 String image = "iVBORw0KGgoA....AAANS=";
-final image = await resizerImage.resizerWithPercent(
-    image: image,
-    percent: 50,
-);
+final image = await resizerImage.resizerWithPercent(image: image, percent: 50);
 ```
 
 - Resize with Width x Height
 
 ```dart
 String image = "iVBORw0KGgoA....AAANS=";
-final image = await resizerImage.resizer(
-    image: image,
-    width: 100,
-    height: 100,
-);
+final image = await resizerImage.resizer(image: image, width: 100, height: 100);
 ```
 
