@@ -1,0 +1,13 @@
+[package]
+name = "rust_lib_resizer"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+fast_image_resize = "2.7.3"
+base64 = "0.21.3"
+image = "0.24"
+flutter_rust_bridge = "=2.0.0-dev.32"

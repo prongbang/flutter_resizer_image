@@ -4,7 +4,8 @@ import 'package:cached_memory_image/cached_memory_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_resizer_image/flutter_resizer_image.dart';
 
-void main() {
+void main() async {
+  await FlutterResizerImage.init();
   runApp(const MyApp());
 }
 
@@ -93,7 +94,8 @@ class _MyAppState extends State<MyApp> {
       percent: 50,
     );
     final end = DateTime.now();
-    print('resizer: ${end.millisecondsSinceEpoch - start.millisecondsSinceEpoch}ms');
+    print(
+        'resizer: ${end.millisecondsSinceEpoch - start.millisecondsSinceEpoch}ms');
     return image;
   }
 }

@@ -1,18 +1,15 @@
-import 'package:flutter_resizer_image/flutter_resizer_image.dart';
-import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
+import 'dart:typed_data';
 
-export 'resizer_image.d.dart';
-export 'resizer_image.g.dart';
-
-final _dylib = loadLibForFlutter('libresizer.so');
-
-final ResizerImage _resizerImage = ResizerImageImpl(_dylib);
+import 'package:resizer/resizer.dart' as r;
 
 abstract class FlutterResizerImage {
   FlutterResizerImage();
 
-  factory FlutterResizerImage.instance() =>
-      FlutterResizerImageImpl(_resizerImage);
+  factory FlutterResizerImage.instance() => FlutterResizerImageImpl();
+
+  static Future<void> init() {
+    return r.init();
+  }
 
   Future<Uint8List> resizer({
     required String image,
@@ -27,9 +24,7 @@ abstract class FlutterResizerImage {
 }
 
 class FlutterResizerImageImpl implements FlutterResizerImage {
-  final ResizerImage resizerImage;
-
-  FlutterResizerImageImpl(this.resizerImage);
+  FlutterResizerImageImpl();
 
   @override
   Future<Uint8List> resizer({
@@ -37,7 +32,7 @@ class FlutterResizerImageImpl implements FlutterResizerImage {
     required int width,
     required int height,
   }) =>
-      resizerImage.resizer(
+      r.resizer(
         image: image,
         width: width,
         height: height,
@@ -49,7 +44,7 @@ class FlutterResizerImageImpl implements FlutterResizerImage {
     required String image,
     required int percent,
   }) =>
-      resizerImage.resizer(
+      r.resizer(
         image: image,
         width: 0,
         height: 0,
