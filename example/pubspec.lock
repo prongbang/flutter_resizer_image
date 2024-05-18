@@ -134,9 +134,11 @@ packages:
   flutter_resizer_image:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "862a881b1f160b8f46df586dc4eff47deaf715dc"
+      url: "https://github.com/prongbang/flutter_resizer_image"
+    source: git
     version: "1.0.0"
   flutter_rust_bridge:
     dependency: transitive
@@ -324,9 +326,11 @@ packages:
   rust_lib_resizer:
     dependency: transitive
     description:
-      path: "../rust_builder"
-      relative: true
-    source: path
+      path: rust_builder
+      ref: HEAD
+      resolved-ref: "862a881b1f160b8f46df586dc4eff47deaf715dc"
+      url: "https://github.com/prongbang/flutter_resizer_image"
+    source: git
     version: "0.0.1"
   rxdart:
     dependency: transitive
