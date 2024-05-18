@@ -1,5 +1,5 @@
 name: rust_lib_resizer
-description: "Utility to build Rust code"
+description: "Utility to build Rust image resizer code"
 version: 0.0.1
 publish_to: none
 
